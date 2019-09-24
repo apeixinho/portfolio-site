@@ -1,0 +1,70 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "repository": "git@gitlab.com:apeixinho/portfolio-site.git",
+  "author": "apeixinho <a_peixinho@sapo.pt>",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:modules": "rimraf node-modules package-lock.json",
+    "build": "npm run clean && webpack --progress --config webpack.config.dev.js",
+    "build:prod": "npm run clean && webpack --progress -p --env production --config webpack.config.prod.js",
+    "start": "npm run build && webpack-dev-server --config webpack.config.dev.js",
+    "start:prod": "npm run build:prod && webpack-dev-server -p --env production --config webpack.config.prod.js"
+  },
+  "browserslist": [
+    "> .01%",
+    "not dead",
+    "last 3 Chrome versions",
+    "last 3 Firefox versions",
+    "last 3 Safari versions",
+    "last 2 Edge versions",
+    "last 1 version",
+    "Firefox ESR",
+    "not ie <= 11"
+  ],
+  "devDependencies": {
+    "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "animate.css": "^3.7.2",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "devicon-2.2": "^2.2.0",
+    "ejs": "^2.7.1",
+    "ejs-compiled-loader": "^1.1.0",
+    "eslint": "^5.12.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "express": "^4.17.1",
+    "file-loader": "^4.2.0",
+    "font-awesome": "^4.7.0",
+    "font-awesome-loader": "^1.0.2",
+    "helmet": "^3.21.0",
+    "html-webpack-plugin": "^4.0.0-beta.5",
+    "jimp": "^0.6.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "pm2": "^3.5.1",
+    "postcss-loader": "^3.0.0",
+    "responsive-loader": "^1.2.0",
+    "rimraf": "^2.6.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.1.0",
+    "vanillajs-scrollspy": "^2.0.3",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}

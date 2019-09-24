@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://adolfo-peixinho.eu.org/sitemap.xml

@@ -1,0 +1,16 @@
+{
+    "apps": [
+        {
+            "name": "server",
+            "script": "server.js",
+            "max_restarts": 20,
+            "instances": 2,
+            "max_memory_restart": "64M",
+            "watch": false,
+            "env": {
+                "PORT": 10001,
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}
