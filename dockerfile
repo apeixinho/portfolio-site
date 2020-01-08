@@ -39,5 +39,6 @@ RUN npm i && npm run build:prod
 
 EXPOSE 10001
 
-CMD ["node_modules/pm2/bin/pm2-docker", "start", "pm2-conf.json"]
+# CMD ["node_modules/pm2/bin/pm2-docker", "start", "pm2-conf.json"]
+CMD ["node_modules/pm2/bin/pm2-runtime", "pm2-conf.json"]
 # CMD ["tail","-f", "/dev/null"]
