@@ -13,16 +13,16 @@ const deployDate = id => {
   // timeElement.innerHTML = date;
 }
 
-const myAge = id => {
-  let my_age_el = document.getElementById(id);
-  const birthday = new Date("1979-07-12");
-  const ageDifMs = Date.now() - birthday.getTime();
-  const ageDate = new Date(ageDifMs); // miliseconds from epoch
-  my_age_el.insertAdjacentText('afterbegin', Math.abs(ageDate.getFullYear() - 1970) + ' years old');
-}
+// const myAge = id => {
+//   let my_age_el = document.getElementById(id);
+//   const birthday = new Date("1979-07-12");
+//   const ageDifMs = Date.now() - birthday.getTime();
+//   const ageDate = new Date(ageDifMs); // miliseconds from epoch
+//   my_age_el.insertAdjacentText('afterbegin', Math.abs(ageDate.getFullYear() - 1970) + ' years old');
+// }
 
 //export {myAge}
 export {
-  deployDate,
-  myAge
+  deployDate
+  //, myAge
 }

@@ -28,34 +28,34 @@
     "not ie <= 11"
   ],
   "devDependencies": {
-    "webpack-dev-server": "^3.8.1"
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/core": "^7.7.7",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
     "animate.css": "^3.7.2",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
     "brotli-webpack-plugin": "^1.1.0",
-    "compression-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.4",
-    "css-loader": "^3.2.0",
+    "compression-webpack-plugin": "^3.0.1",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.1",
     "devicon-2.2": "^2.2.0",
     "ejs": "^2.7.1",
     "ejs-compiled-loader": "^1.1.0",
     "eslint": "^5.12.1",
     "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.19.1",
     "express": "^4.17.1",
     "file-loader": "^4.2.0",
     "font-awesome": "^4.7.0",
     "font-awesome-loader": "^1.0.2",
-    "helmet": "^3.21.0",
+    "helmet": "^3.21.2",
     "html-webpack-plugin": "^4.0.0-beta.5",
     "jimp": "^0.6.0",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "pm2": "^3.5.1",
     "postcss-loader": "^3.0.0",
     "responsive-loader": "^1.2.0",
@@ -64,7 +64,7 @@
     "style-loader": "^0.23.1",
     "url-loader": "^2.1.0",
     "vanillajs-scrollspy": "^2.0.3",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
