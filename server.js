@@ -39,9 +39,9 @@ app.use(helmet.referrerPolicy({
 // Define path from where to server static files, in our case
 // root directory so we don't need to add any path
 // app.use(express.static(path.join(__dirname)));
-// app.use(express.static('dist'));
+const server = app.use(express.static('dist'));
 
-app.use(createGracefulShutdownMiddleware(express.static('dist'), { forceTimeout: 30000 }));
+app.use(createGracefulShutdownMiddleware(server, { forceTimeout: 30000 }));
 
 // start listening on port
 app.listen(port, (err) => {
