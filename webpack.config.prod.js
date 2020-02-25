@@ -63,8 +63,8 @@ const prodConfig = module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      minSize: 4000,
-      maxSize: 244000
+      // minSize: 4000,
+      // maxSize: 244000
     }
   },
   mode: "production",
