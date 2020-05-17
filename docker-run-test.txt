@@ -1,5 +1,0 @@
-docker run -d \
---expose=10002 \
---restart=on-failure:10 \
---name portfolio-site \
-portfolio-site
