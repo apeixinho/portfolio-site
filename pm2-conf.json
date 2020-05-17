@@ -4,6 +4,7 @@
             "name": "server",
             "script": "server.js",
             "max_restarts": 20,
+	    "exec_mode": "cluster",
             "instances": 2,
             "max_memory_restart": "64M",
             "watch": false,
