@@ -26,7 +26,7 @@ const miniCssExtractPluginConfig = new MiniCssExtractPlugin({
 });
 
 const htmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  title: 'Portfolio website',
+  title: 'My Portfolio',
   template: './ejs/index.ejs',
   favicon: './images/favicon.ico',
   inject: true,

@@ -11,7 +11,8 @@ const port = 10001;
 app.use(helmet.permittedCrossDomainPolicies());
 // don't set HTST header its already set by nginx
 app.use(helmet({
-  hsts: false
+  hsts: false,
+  frameguard: true
 }));
 
 app.use(helmet.contentSecurityPolicy({
@@ -27,8 +28,10 @@ app.use(helmet.contentSecurityPolicy({
     frameAncestors: ["'none'"],
     workerSrc: ["'none'"],
     formAction: ["'none'"],
-    blockAllMixedContent: true
+    blockAllMixedContent: true,
+    upgradeInsecureRequests: true
   },
+  browserSniff: false,
   disableAndroid: true
 }));
 
