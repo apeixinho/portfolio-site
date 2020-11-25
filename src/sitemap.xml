@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://adolfo-peixinho.eu.org/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1</priority>
-  </url>
-  <url>
-    <loc>http://www.adolfo-peixinho.eu.org/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://adolfo-peixinho.eu.org/</loc>
+  <lastmod>2020-11-24T09:32:46+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://adolfo-peixinho.eu.org/apeixinho-CV.pdf</loc>
+  <lastmod>2020-11-24T09:32:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
