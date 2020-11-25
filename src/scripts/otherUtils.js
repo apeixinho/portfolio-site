@@ -169,9 +169,13 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function isVisibleOnScreen(elem) {
-    var rect = elem.getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    if (Object.is(elem, null)) {
+      return false
+    } else {
+      var rect = elem.getBoundingClientRect();
+      var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+      return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    }
   }
 
   // initialize ScrollSpy

@@ -12,32 +12,32 @@ app.use(helmet.permittedCrossDomainPolicies());
 // don't set HTST header its already set by nginx
 app.use(helmet({
   hsts: false,
-  frameguard: true
+  // frameguard: true
 }));
 
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'"],
-    styleSrc: ["'self'"],
-    imgSrc: ["'self'", "data:"],
-    fontSrc: ["'self'"],
-    mediaSrc: ["'none'"],
-    objectSrc: ["'none'"],
-    frameSrc: ["'none'"],
-    frameAncestors: ["'none'"],
-    workerSrc: ["'none'"],
-    formAction: ["'none'"],
-    blockAllMixedContent: true,
-    upgradeInsecureRequests: true
-  },
-  browserSniff: false,
-  disableAndroid: true
-}));
+// app.use(helmet.contentSecurityPolicy({
+//   directives: {
+//     defaultSrc: ["'self'"],
+//     scriptSrc: ["'self'"],
+//     styleSrc: ["'self'"],
+//     imgSrc: ["'self'", "data:"],
+//     fontSrc: ["'self'"],
+//     mediaSrc: ["'none'"],
+//     objectSrc: ["'none'"],
+//     frameSrc: ["'none'"],
+//     frameAncestors: ["'none'"],
+//     workerSrc: ["'none'"],
+//     formAction: ["'none'"],
+//     blockAllMixedContent: true,
+//     upgradeInsecureRequests: true
+//   },
+//   browserSniff: false,
+//   disableAndroid: true
+// }));
 
-app.use(helmet.referrerPolicy({
-  policy: 'same-origin'
-}));
+// app.use(helmet.referrerPolicy({
+//   policy: 'same-origin'
+// }));
 
 // Define path from where to server static files, in our case
 // root directory so we don't need to add any path
