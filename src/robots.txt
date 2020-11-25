@@ -1,4 +1,5 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
 
 Sitemap: https://adolfo-peixinho.eu.org/sitemap.xml
