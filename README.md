@@ -7,7 +7,7 @@
     ```
     docker run -d \
         -e VIRTUAL_HOST=adolfo-peixinho.eu.org \
-        -e LETSENCRYPT_HOST=adolfo-peixinho.eu.org,www.adolfo-peixinho.eu.org \
+        -e LETSENCRYPT_HOST=adolfo-peixinho.eu.org \
         -e LETSENCRYPT_EMAIL=a_peixinho@sapo.pt \
         --expose=10001 \
         --restart=on-failure:10 \
@@ -21,7 +21,7 @@
     ```
     docker run -d \
         -e VIRTUAL_HOST=adolfo-peixinho.eu.org \
-        -e LETSENCRYPT_HOST=adolfo-peixinho.eu.org,www.adolfo-peixinho.eu.org \
+        -e LETSENCRYPT_HOST=adolfo-peixinho.eu.org \
         -e LETSENCRYPT_EMAIL=a_peixinho@sapo.pt \
         -e LETSENCRYPT_TEST="true" \
         --expose=10001 \
