@@ -7,13 +7,13 @@ const createGracefulShutdownMiddleware = require('express-graceful-shutdown');
 const app = express();
 const port = 10001;
 
-// app.use(helmet());
-app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet());
+// app.use(helmet.permittedCrossDomainPolicies());
 // don't set HTST header its already set by nginx
-app.use(helmet({
-  hsts: false,
+// app.use(helmet({
+//   hsts: false,
   // frameguard: true
-}));
+// }));
 
 // app.use(helmet.contentSecurityPolicy({
 //   directives: {
