@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:14-alpine
 
 # Setup environment variables.
 # If using one liner breakpoint '\' you can't use previously defined
@@ -9,7 +9,6 @@ ENV NODE_ENV=production
 
 # Following best practices at:
 # https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
-
 
 RUN apk update && apk upgrade && \
   # apk add --no-cache build-base git && \
