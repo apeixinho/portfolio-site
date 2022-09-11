@@ -210,7 +210,7 @@ const prodConfig = module.exports = {
     loaderOptionsPluginConfig,
     hashedModuleIdsPluginConfig,
     new CopyWebpackPlugin([{
-      from: 'docs/apeixinho-CV.pdf',
+      from: 'docs/apeixinhoCV.pdf',
       to: '[name].[ext]',
       toType: 'template'
     }]),
