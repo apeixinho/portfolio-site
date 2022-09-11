@@ -31,9 +31,9 @@
     "webpack-dev-server": "^3.11.3"
   },
   "dependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.19.0",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-env": "^7.19.0",
     "animate.css": "^3.7.2",
     "autoprefixer": "^9.8.8",
     "babel-loader": "^8.2.5",

@@ -1,4 +1,4 @@
-var dataset = ["Hi, and welcome to my portfolio site.", "I'm a passionate full-stack developer.", "Always eager to learn about new technologies and paradigms."];
+var dataset = ["Hi, and welcome to my portfolio site.", "I'm software developer enthusiast.", "Always eager to learn about new technologies and paradigms."];
 
 var datasetIndex = 0;
 var data;
