@@ -42,7 +42,7 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Java VS Code related 
+# Java VS Code related
 settings.json
 # TypeScript v1 declaration files
 typings/
@@ -95,3 +95,6 @@ dist/
 
 # npm related
 package-lock.json
+
+# docker example
+example.txt
