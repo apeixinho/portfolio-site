@@ -1,5 +1,5 @@
-$fa-font-path: "~font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome.scss';
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '~devicon-2.2/devicon.css';
 @import '~devicon-2.2/devicon-colors.css';
 @import "~animate.css/source/_base.css";
