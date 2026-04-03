@@ -1,48 +1,49 @@
-# CVS
+# VCS
 .git
 .gitignore
 
-# Docker stuff
-dockerfile
+# Docker (build uses Dockerfile on host; no need inside image context)
 Dockerfile
-docker-compose*.yml
-docker-run*.txt
+dockerfile
+.dockerignore
 
-# compiled output
+# Build output (rebuilt in container)
 dist
 tmp
-sme
-target
 
-# dependencies
+# Dependencies (installed in image: full install in builder, --omit=dev in runtime stage)
 node_modules
 bower_components
 
-# IDEs and editors
+# Editors / OS
 .idea
 .vscode
+.cursor
 .project
 .classpath
 *.launch
 .editorconfig
 .settings/
-
-# misc
-.sass-cache
-connect.lock
-coverage/*
-libpeerconnection.log
-npm-debug.log
-testem.log
-typings
-README.md
-LICENSE
-yarn.lock
-
-# e2e
-e2e/*.js
-e2e/*.map
-
-#System Files
 .DS_Store
 Thumbs.db
+
+# Logs & caches
+.sass-cache
+coverage
+npm-debug.log*
+testem.log
+typings
+libpeerconnection.log
+
+# Docs (not needed to build)
+*.md
+LICENSE
+
+# Other package managers (this project uses package-lock.json + npm ci in Docker)
+yarn.lock
+pnpm-lock.yaml
+
+# Misc
+connect.lock
+e2e/*.js
+e2e/*.map

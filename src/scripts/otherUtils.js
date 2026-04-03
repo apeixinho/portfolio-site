@@ -1,5 +1,5 @@
 import VanillaScrollspy from 'vanillajs-scrollspy';
-import autotyper from './autotype';
+import './autotype';
 
 // DOM content loaded (on document ready)
 document.addEventListener('DOMContentLoaded', function () {
@@ -182,8 +182,4 @@ document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.querySelector('nav');
   const scrollspy = new VanillaScrollspy(navbar, 875);
   scrollspy.init();
-
-  // call autotyper
-  autotyper;
-
 });

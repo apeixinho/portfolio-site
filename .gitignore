@@ -93,8 +93,5 @@ typings/
 # dist folder
 dist/
 
-# npm related
-package-lock.json
-
 # docker example
 example.txt
