@@ -47,4 +47,6 @@ function removeLetter() {
   }
 }
 
-window.onload = window.setTimeout(textRotation, 500);
+window.addEventListener('load', function () {
+  window.setTimeout(textRotation, 500);
+});
