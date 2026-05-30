@@ -4,9 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="keywords" content="adolfo peixinho, portfolio, curriculum vitae, resume">
-  <meta name="description" content="Portofolio site">
+  <meta name="description" content="Adolfo Peixinho - Portfolio site">
+  <link rel="canonical" href="https://adolfo-peixinho.eu.org/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adolfo Peixinho - Portfolio">
+  <meta property="og:description" content="Portfolio site of Adolfo Peixinho, a software developer with 10+ years of experience.">
+  <meta property="og:image" content="https://adolfo-peixinho.eu.org/images/hero-background.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adolfo Peixinho - Portfolio">
+  <meta name="twitter:description" content="Portfolio site of Adolfo Peixinho, a software developer with 10+ years of experience.">
+  <meta name="twitter:image" content="https://adolfo-peixinho.eu.org/images/hero-background.jpg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
@@ -15,10 +26,11 @@
 <body>
 
   <%- include src/ejs/common/header -%>
-  <%- include src/ejs/common/hero -%>
-  <%- include src/ejs/common/about -%>
-  <%# <%- include src/ejs/common/skills -%>
-  <%- include src/ejs/common/contact -%>
+  <main>
+    <%- include src/ejs/common/hero -%>
+    <%- include src/ejs/common/about -%>
+    <%- include src/ejs/common/contact -%>
+  </main>
   <%- include src/ejs/common/footer -%>
 
 </body>

@@ -2,47 +2,20 @@ import VanillaScrollspy from 'vanillajs-scrollspy';
 import './autotype';
 
 document.addEventListener('DOMContentLoaded', function () {
-  var topHeader = document.querySelector('header');
-  var my_face = document.getElementById('my_face');
-  var about_section = document.getElementById('about');
-  var skill_grid = document.getElementById('skill_grid');
-  var emailContact = document.getElementById('emailContact');
-  var contactButtons = document.getElementById('contactButtons');
-  var resumeDownload = document.getElementById('resumeDownload');
-
-  // Attach skill_grid event listeners once (if skills section exists)
-  if (skill_grid) {
-    var skillItems = skill_grid.getElementsByTagName('li');
-    var isDesktop = typeof document.documentElement.clientWidth !== 'undefined' && document.documentElement.clientWidth > 560;
-
-    if (isDesktop) {
-      for (var i = 0; i < skillItems.length; i++) {
-        skillItems[i].addEventListener('mouseenter', function () {
-          this.classList.add("animated", "tada");
-        });
-        skillItems[i].addEventListener('mouseleave', function () {
-          this.classList.remove("animated", "tada");
-        });
-      }
-    } else {
-      for (var j = 0; j < skillItems.length; j++) {
-        skillItems[j].addEventListener('touchstart', function () {
-          this.classList.add("animated", "tada");
-        });
-        skillItems[j].addEventListener('touchend', function () {
-          this.classList.remove("animated", "tada");
-        });
-      }
-    }
-  }
+  const topHeader = document.querySelector('header');
+  const my_face = document.getElementById('my_face');
+  const about_section = document.getElementById('about');
+  const emailContact = document.getElementById('emailContact');
+  const contactButtons = document.getElementById('contactButtons');
+  const resumeDownload = document.getElementById('resumeDownload');
 
   // Attach email obfuscation listeners once
-  var emailEncoded = emailContact ? emailContact.getAttribute('href') : null;
+  const emailEncoded = emailContact ? emailContact.getAttribute('href') : null;
 
   if (emailContact && emailEncoded) {
     ['click', 'mouseenter', 'touchstart', 'pointerover'].forEach(function (evt) {
       emailContact.addEventListener(evt, function () {
-        var cleanEmail = this.getAttribute('href').replace(/y|u|k/g, '');
+        const cleanEmail = this.getAttribute('href').replace(/y|u|k/g, '');
         this.setAttribute('href', cleanEmail);
       });
     });
@@ -55,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Mobile menu initialization flag
-  var mobileMenuInitialized = false;
+  let mobileMenuInitialized = false;
 
   // Scroll handler — only visibility checks and class toggles, no addEventListener
   window.addEventListener('scroll', function () {
     // Sticky header
     if (typeof document.documentElement.clientWidth !== 'undefined' && document.documentElement.clientWidth > 560) {
-      var topHeaderHeight = topHeader.offsetHeight;
-      var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      const topHeaderHeight = topHeader.offsetHeight;
+      const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
       if (scrollPosition > topHeaderHeight) {
         topHeader.classList.add("sticky");
       } else {
@@ -79,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // About section animation
     if (isVisibleOnScreen(about_section)) {
-      var userDataContent = document.querySelector('.user-data-content');
+      const userDataContent = document.querySelector('.user-data-content');
       if (userDataContent) {
-        var items = userDataContent.getElementsByTagName('li');
-        for (var it = 0; it < items.length; it++) {
+        const items = userDataContent.getElementsByTagName('li');
+        for (let it = 0; it < items.length; it++) {
           items[it].classList.add("animated", "fadeInRight", "delay-" + (it + 1) + "s");
         }
-        var continuate = document.getElementsByClassName("continuate");
+        const continuate = document.getElementsByClassName("continuate");
         if (continuate.length > 0) {
           continuate[0].classList.add("animated", "fadeIn", "delay-5s", "slower");
         }
@@ -102,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Update aria-current on nav links (ScrollSpy adds 'active' to li)
-    var activeNavLink = document.querySelector('nav ul li.active a');
-    var allNavLinks = document.querySelectorAll('nav ul li a');
-    for (var a = 0; a < allNavLinks.length; a++) {
+    const activeNavLink = document.querySelector('nav ul li.active a');
+    const allNavLinks = document.querySelectorAll('nav ul li a');
+    for (let a = 0; a < allNavLinks.length; a++) {
       allNavLinks[a].removeAttribute('aria-current');
     }
     if (activeNavLink) {
@@ -118,28 +91,34 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!mobileMenuInitialized) {
         mobileMenuInitialized = true;
 
-        document.getElementById('menu-nav').addEventListener('click', function () {
-          if (document.getElementById('menu-nav').checked) {
-            document.querySelector('.nav-container').classList.add("sticky");
+        const menuNav = document.getElementById('menu-nav');
+        const navContainer = document.querySelector('.nav-container');
+
+        menuNav.addEventListener('click', function () {
+          const navLabel = document.querySelector('label[for="menu-nav"]');
+          if (menuNav.checked) {
+            navContainer.classList.add("sticky");
+            navLabel.setAttribute('aria-expanded', 'true');
           } else {
-            document.querySelector('.nav-container').classList.remove("sticky");
+            navContainer.classList.remove("sticky");
+            navLabel.setAttribute('aria-expanded', 'false');
           }
         });
 
-        var navLinks = document.querySelector('.nav-container').getElementsByTagName('a');
-        for (var i = 0; i < navLinks.length; i++) {
+        const navLinks = navContainer.getElementsByTagName('a');
+        for (let i = 0; i < navLinks.length; i++) {
           navLinks[i].addEventListener('click', function () {
-            document.getElementById('menu-nav').checked = false;
-            document.querySelector('.nav-container').classList.remove("sticky");
+            menuNav.checked = false;
+            navContainer.classList.remove("sticky");
           });
         }
 
-        var sections = document.getElementsByTagName('section');
-        for (var it = 0; it < sections.length; it++) {
+        const sections = document.getElementsByTagName('section');
+        for (let it = 0; it < sections.length; it++) {
           sections[it].addEventListener('click', function () {
-            if (document.getElementById('menu-nav').checked) {
-              document.getElementById('menu-nav').checked = false;
-              document.querySelector('.nav-container').classList.remove("sticky");
+            if (menuNav.checked) {
+              menuNav.checked = false;
+              navContainer.classList.remove("sticky");
             }
           });
         }
@@ -153,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (Object.is(elem, null)) {
       return false;
     }
-    var rect = elem.getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    const rect = elem.getBoundingClientRect();
+    const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
   }
 

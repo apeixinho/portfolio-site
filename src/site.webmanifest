@@ -1,0 +1,16 @@
+{
+  "name": "Adolfo Peixinho - Portfolio",
+  "short_name": "Portfolio",
+  "description": "Portfolio site of Adolfo Peixinho, a software developer with 10+ years of experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2358bd",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

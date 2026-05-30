@@ -9,6 +9,7 @@ const deployDate = id => {
   const currentYear = currentDate.getFullYear();
   const currentMonth = months[currentDate.getMonth()];
   const currentDay = currentDate.getDate();
+  timeElement.setAttribute('datetime', currentDate.toISOString());
   timeElement.innerHTML = currentDay + " of " + currentMonth + ", " + currentYear
 }
 

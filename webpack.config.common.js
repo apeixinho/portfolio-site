@@ -80,6 +80,11 @@ module.exports = {
           to: '[name][ext]',
           noErrorOnMissing: true,
         },
+        {
+          from: path.resolve(__dirname, 'src/site.webmanifest'),
+          to: '[name][ext]',
+          noErrorOnMissing: true,
+        },
       ],
     }),
     new MiniCssExtractPlugin({
