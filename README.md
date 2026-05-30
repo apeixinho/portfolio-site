@@ -2,7 +2,7 @@
 
 This site is set up to run on [nginx proxy automation](https://github.com/evertramos/nginx-proxy-automation).
 
-All _nginx_, _Let's Encrypt_ _proxy automation_ credit goes to [these folks](https://github.com/evertramos/nginx-proxy-automation/graphs/contributors).
+All _nginx_, _Let's Encrypt_ _proxy automation_ credit goes to [these folks](https://github.com/evertramos/nginx-proxy-automation).
 
 ## Build and CV
 
