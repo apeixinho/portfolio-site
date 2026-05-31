@@ -52,7 +52,7 @@ module.exports = {
       },
       {
         test: /\.ejs$/,
-        loader: 'ejs-compiled-loader',
+        loader: path.resolve(__dirname, 'webpack/ejs-loader.js'),
       },
     ],
   },
