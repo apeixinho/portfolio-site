@@ -4,14 +4,14 @@ const months = ["January", "February", "March", "April", "May", "June",
 
 
 const deployDate = id => {
-  let timeElement = document.getElementById(id);
+  const timeElement = document.getElementById(id);
+  if (!timeElement) return;
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   const currentMonth = months[currentDate.getMonth()];
   const currentDay = currentDate.getDate();
   timeElement.setAttribute('datetime', currentDate.toISOString());
-  timeElement.setAttribute('datetime', currentDate.toISOString());
-  timeElement.innerHTML = currentDay + " of " + currentMonth + ", " + currentYear
+  timeElement.textContent = currentDay + " of " + currentMonth + ", " + currentYear
 }
 
 export { deployDate }

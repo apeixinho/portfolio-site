@@ -70,7 +70,7 @@ section {
   align-items: center;
   padding: 80px 20px 20px 20px;
 
-  h1.title {
+  h2.title {
     color: $gray2;
     text-transform: uppercase;
     font: bold 32px "Open Sans", sans-serif;
@@ -105,6 +105,22 @@ ul.grid {
 
 .hidden {
   display: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: $blue3;
+  color: $white;
+  padding: 8px 16px;
+  z-index: 100;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:focus {
+    top: 0;
+  }
 }
 
 .active {
@@ -163,9 +179,124 @@ header {
   }
 }
 
+@media (max-width: 561px) {
+  header {
+    left: 0;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out 0.2s;
+
+    .nav-container {
+      position: fixed;
+      top: -600px;
+      height: auto;
+      width: 100%;
+      background-color: $blue3;
+      opacity: 1;
+    }
+
+    .nav-container ul li {
+      display: block;
+      float: none;
+      width: 100%;
+      transition: background-color 0.2s ease-in-out 0.1s;
+
+      &:hover,
+      &.active {
+        opacity: 1;
+        background-color: $smoke;
+        color: $blue3;
+      }
+    }
+
+    .nav-container ul li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      transform: translateY(-20px);
+      transition: transform 0.2s ease-in-out 0.1s;
+    }
+
+    .nav-open {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      display: block;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      z-index: 30;
+      border-radius: 24px;
+      border: 2px solid $blue3;
+      background-color: $smoke;
+    }
+
+    .nav-open i {
+      display: block;
+      width: 20px;
+      height: 4px;
+      background: $blue3;
+      border-radius: 4px;
+      margin-left: 12px;
+    }
+
+    .nav-open i:nth-child(1) {
+      margin-top: 14px;
+    }
+
+    .nav-open i:nth-child(2) {
+      margin-top: 4px;
+      opacity: 1;
+    }
+
+    .nav-open i:nth-child(3) {
+      margin-top: 4px;
+    }
+  }
+}
+
+#menu-nav:checked + .nav-open {
+  border: none;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+#menu-nav:checked + .nav-open i {
+  margin-left: 14px;
+  transition: transform 0.2s ease-in-out 0.1s;
+}
+
+#menu-nav:checked + .nav-open i:nth-child(1) {
+  transform: translateY(8px) rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+#menu-nav:checked + .nav-open i:nth-child(2) {
+  opacity: 0;
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+#menu-nav:checked + .nav-open i:nth-child(3) {
+  transform: translateY(-8px) rotate(90deg);
+  transition: transform 0.2s ease;
+}
+
+#menu-nav:checked ~ .nav-container {
+  opacity: 1;
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+#menu-nav:checked ~ .nav-container ul li a {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.2s ease-in-out 0.1s;
+}
+
 /*----------------
  	Hero Section
-----------------*/
+ ----------------*/
 
 .hero {
   position: relative;
@@ -205,7 +336,7 @@ header {
     border-radius: 50%;
   }
 
-  h2 {
+  h1 {
     margin-top: 1em;
     font: bold 64px "Open Sans", sans-serif, monospace;
   }
@@ -249,7 +380,7 @@ header {
       border-radius: 50%;
     }
 
-    h2 {
+    h1 {
       font: bold 38px "Open Sans", sans-serif, monospace;
     }
 
@@ -302,10 +433,8 @@ header {
     }
 
     .user-data {
-      height: auto;
       margin-bottom: 50px;
       padding-left: 10px;
-      height: auto;
 
       .user-data-content {
         border-left: 2px solid $blue2;
@@ -333,9 +462,12 @@ header {
               padding: 0;
               line-height: 24px;
               font-size: 32px;
+              position: relative;
+              z-index: 1;
+              background-color: $white;
 
-              i {
-                background-color: $white;
+              svg {
+                display: block;
               }
 
               img {
@@ -422,7 +554,8 @@ header {
     text-align: center;
   }
 
-  h4 {
+  span {
+    display: block;
     margin-top: 0.6em;
   }
 }
@@ -500,5 +633,16 @@ footer {
   100% {
     opacity: 0;
     transform: translateY(24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

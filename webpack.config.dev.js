@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,6 +8,9 @@ module.exports = merge(common, {
   devtool: 'eval-cheap-module-source-map',
   output: {
     filename: '[name].bundle.js',
+  },
+  performance: {
+    hints: "warning",
   },
   module: {
     rules: [
@@ -33,31 +35,16 @@ module.exports = merge(common, {
       },
     ],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    historyApiFallback: true,
-    port: 4000,
-    compress: true,
-    hot: true,
-    open: true,
-    client: {
-      overlay: true,
-    },
-    allowedHosts: 'all',
-  },
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
       DEBUG: 'false',
     }),
     new HtmlWebpackPlugin({
-      title: 'homepage',
+      title: 'My Portfolio',
       template: './ejs/index.ejs',
       favicon: './images/favicon.ico',
       inject: true,
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 });

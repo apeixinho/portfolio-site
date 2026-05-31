@@ -95,4 +95,18 @@ module.exports = {
   stats: {
     colors: true,
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    historyApiFallback: true,
+    port: 4000,
+    compress: true,
+    hot: true,
+    open: true,
+    client: {
+      overlay: false,
+    },
+    allowedHosts: 'all',
+  },
 };

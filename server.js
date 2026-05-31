@@ -19,9 +19,9 @@ app.use(
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// 404 fallback
+// SPA fallback
 app.use(function (req, res) {
-  res.status(404).sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 const server = http.createServer(app);

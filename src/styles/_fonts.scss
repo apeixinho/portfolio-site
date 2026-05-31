@@ -1,6 +1,13 @@
 @font-face {
-  font-family: 'OpenSans';
+  font-family: 'Open Sans';
   src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
-  src: url('../fonts/Open_Sans/OpenSans-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/Open_Sans/OpenSans-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}

@@ -76,11 +76,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update aria-current on nav links (ScrollSpy adds 'active' to li)
     const activeNavLink = document.querySelector('nav ul li.active a');
-    const allNavLinks = document.querySelectorAll('nav ul li a');
-    for (let a = 0; a < allNavLinks.length; a++) {
-      allNavLinks[a].removeAttribute('aria-current');
-    }
     if (activeNavLink) {
+      const allNavLinks = document.querySelectorAll('nav ul li a');
+      for (let a = 0; a < allNavLinks.length; a++) {
+        allNavLinks[a].removeAttribute('aria-current');
+      }
       activeNavLink.setAttribute('aria-current', 'page');
     }
   });
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function isVisibleOnScreen(elem) {
-    if (Object.is(elem, null)) {
+    if (!elem) {
       return false;
     }
     const rect = elem.getBoundingClientRect();

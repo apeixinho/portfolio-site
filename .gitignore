@@ -95,3 +95,7 @@ dist/
 
 # docker example
 example.txt
+
+# agents
+.continue/*
+.agents
